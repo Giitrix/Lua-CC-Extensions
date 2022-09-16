@@ -24,7 +24,7 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/threads.lua",
       "path": "lib/core/threads.lua",
       "require": ["gos"],
-      "startup": "require(\"libs/core/threads\") os.runShellThread() os.runThreadsManager()",
+      "startup": "require(\"libs/core/threads\") ",
       "priority": -999
     },
     "daemon": {
