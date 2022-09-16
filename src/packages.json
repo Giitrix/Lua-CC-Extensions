@@ -1,0 +1,62 @@
+{
+  "packages": {
+    "gos": {
+      "name": "gos",
+      "version": "1.00.1",
+      "url": "",
+      "path": "lib/core/gos.lua",
+      "require": [],
+      "startup": "require(\"libs/core/gos\")"
+    },
+    "gnet": {
+      "name": "gnet",
+      "version": "1.00.1",
+      "url": "",
+      "path": "lib/core/gnet.lua",
+      "require": ["gos"],
+      "startup": "_G.net = require(\"libs/core/gnet\")"
+    },
+    "threads": {
+      "name": "threads",
+      "version": "1.00.1",
+      "url": "",
+      "path": "lib/core/threads.lua",
+      "require": ["gos"],
+      "startup": "require(\"libs/core/threads\") os.runShellThread() os.runThreadsManager()"
+    },
+    "daemon": {
+      "name": "daemon",
+      "version": "1.00.1",
+      "url": "",
+      "path": "lib/daemon.lua",
+      "require": ["gnet"],
+      "startup": ""
+    },
+    "gturtle": {
+      "name": "gturtle",
+      "version": "1.00.1",
+      "url": "",
+      "path": "lib/turtle/gturtle.lua",
+      "require": [],
+      "startup": "_G.turtle = require(\"lib/turtle/gturtle\")"
+    },
+    "gpm": {
+      "name": "gpm",
+      "version": "1.00.1",
+      "url": "",
+      "path": "lib/turtle/gpm.lua",
+      "require": ["gturtle"],
+      "startup": "_G.gpm = require(\"lib/turtle/gpm\")"
+    }
+  },
+  "pack": {
+    "core": {
+      "name": "core",
+      "contains": ["gos", "gnet", "threads"]
+    },
+    "turtle": {
+      "name": "turtle",
+      "contains": ["gturtle", "gpm"]
+    }
+  }
+}
