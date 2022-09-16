@@ -3,7 +3,7 @@
     "gos": {
       "name": "gos",
       "version": "1.00.1",
-      "url": "",
+      "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/gos.lua",
       "path": "lib/core/gos.lua",
       "require": [],
       "startup": "require(\"libs/core/gos\")"
@@ -11,7 +11,7 @@
     "gnet": {
       "name": "gnet",
       "version": "1.00.1",
-      "url": "",
+      "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/gnet.lua",
       "path": "lib/core/gnet.lua",
       "require": ["gos"],
       "startup": "_G.net = require(\"libs/core/gnet\")"
@@ -19,7 +19,7 @@
     "threads": {
       "name": "threads",
       "version": "1.00.1",
-      "url": "",
+      "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/threads.lua",
       "path": "lib/core/threads.lua",
       "require": ["gos"],
       "startup": "require(\"libs/core/threads\") os.runShellThread() os.runThreadsManager()"
@@ -27,7 +27,7 @@
     "daemon": {
       "name": "daemon",
       "version": "1.00.1",
-      "url": "",
+      "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/daemon.lua",
       "path": "lib/daemon.lua",
       "require": ["gnet"],
       "startup": ""
@@ -35,7 +35,7 @@
     "gturtle": {
       "name": "gturtle",
       "version": "1.00.1",
-      "url": "",
+      "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/turtle/gturtle.lua",
       "path": "lib/turtle/gturtle.lua",
       "require": [],
       "startup": "_G.turtle = require(\"lib/turtle/gturtle\")"
@@ -43,7 +43,7 @@
     "gpm": {
       "name": "gpm",
       "version": "1.00.1",
-      "url": "",
+      "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/turtle/gpm.lua",
       "path": "lib/turtle/gpm.lua",
       "require": ["gturtle"],
       "startup": "_G.gpm = require(\"lib/turtle/gpm\")"
