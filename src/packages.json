@@ -6,7 +6,8 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/gos.lua",
       "path": "lib/core/gos.lua",
       "require": [],
-      "startup": "require(\"libs/core/gos\")"
+      "startup": "require(\"libs/core/gos\")",
+      "priority": -1000
     },
     "gnet": {
       "name": "gnet",
@@ -14,7 +15,8 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/gnet.lua",
       "path": "lib/core/gnet.lua",
       "require": ["gos"],
-      "startup": "_G.net = require(\"libs/core/gnet\")"
+      "startup": "_G.net = require(\"libs/core/gnet\")",
+      "priority": -998
     },
     "threads": {
       "name": "threads",
@@ -22,7 +24,8 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/core/threads.lua",
       "path": "lib/core/threads.lua",
       "require": ["gos"],
-      "startup": "require(\"libs/core/threads\") os.runShellThread() os.runThreadsManager()"
+      "startup": "require(\"libs/core/threads\") os.runShellThread() os.runThreadsManager()",
+      "priority": -999
     },
     "daemon": {
       "name": "daemon",
@@ -30,7 +33,8 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/daemon.lua",
       "path": "lib/daemon.lua",
       "require": ["gnet"],
-      "startup": ""
+      "startup": "",
+      "priority": 100
     },
     "gturtle": {
       "name": "gturtle",
@@ -38,7 +42,8 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/turtle/gturtle.lua",
       "path": "lib/turtle/gturtle.lua",
       "require": [],
-      "startup": "_G.turtle = require(\"lib/turtle/gturtle\")"
+      "startup": "_G.turtle = require(\"lib/turtle/gturtle\")",
+      "priority": -1
     },
     "gpm": {
       "name": "gpm",
@@ -46,7 +51,8 @@
       "url": "https://raw.githubusercontent.com/Giitrix/Lua-CC-Extensions/master/src/lib/turtle/gpm.lua",
       "path": "lib/turtle/gpm.lua",
       "require": ["gturtle"],
-      "startup": "_G.gpm = require(\"lib/turtle/gpm\")"
+      "startup": "_G.gpm = require(\"lib/turtle/gpm\")",
+      "priority": 100
     }
   },
   "pack": {

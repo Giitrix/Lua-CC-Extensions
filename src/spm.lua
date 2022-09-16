@@ -5,7 +5,8 @@ local tArgs = {
     ["-u"] = "string",
     ["-l"] = "string",
     ["-f"] = false,
-    ["-y"] = false
+    ["-y"] = false,
+    ["-s"] = false
 }
 local dbPath = ".spmdb.json"
 local installedPath = ".spmi.json"
@@ -193,6 +194,7 @@ function install(name)
             packagesInstalled[n].path = packagesDB.packages[n].path
             packagesInstalled[n].version = packagesDB.packages[n].version
             packagesInstalled[n].startup = packagesDB.packages[n].startup
+            packagesInstalled[n].priority = packagesDB.packages[n].priority
         end
     end
     saveDbs()
@@ -271,6 +273,36 @@ function enableAll()
     end
 end
 
+function rewriteStartup()
+    local startup = ""
+    local startupScripts = {}
+    -- getting all scripts
+    for k, v in pairs(packagesInstalled) do
+        startupScripts[k] = {}
+        startupScripts[k].priority = v.priority
+        startupScripts[k].script = v.startup
+    end
+    -- sorting by priority
+    local comp = function(item1, item2) if item1.priority < item2.priority then return true else return false end end
+    table.sort(startupScripts, comp)
+    print("test")
+    for n, v in ipairs(startupScripts) do
+        print(n..""..textutils.serialise(v))
+    end
+
+
+    startup = startup..'\r\nshell.run("startup-scripts")'
+    fs.delete("startup")
+    local f = io.open("startup", "w")
+    f:write(startup)
+    f:close()
+    if not fs.exists("startup-scripts") then
+        local f = io.open("startup-scripts", "w")
+        f:write("-- Write your startup script here.\r\n-- Don not use startup file!")
+        f:close()
+    end
+end
+
 -- Logic
 
 ---- loading db or uploading
@@ -337,6 +369,10 @@ end
 
 if argList["-i"] ~= false then
     install(argList["-i"])
+end
+
+if argList["-s"] ~= false then
+    rewriteStartup()
 end
 
 saveDbs()

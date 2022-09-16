@@ -1,3 +1,5 @@
 /ccemux-launcher.jar
 /src/.spmdb.json
 /src/.spmi.json
+/src/startup
+/src/startup-scripts
